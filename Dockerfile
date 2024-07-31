@@ -17,13 +17,13 @@ $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
 tee /etc/apt/sources.list.d/docker.list > /dev/null
 RUN apt-get update
 
-# Install vim
-RUN yes | apt-get install vim
-
 # Install the Docker packages
 RUN yes | apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 RUN docker 
 RUN docker --version
+
+# Install vim
+RUN yes | apt-get install vim
 
 # Install zip, unzip
 RUN yes | apt-get install zip unzip

@@ -25,11 +25,8 @@ RUN docker --version
 # Install vim
 RUN yes | apt-get install vim
 
-# Install zip, unzip
-RUN yes | apt-get install zip unzip
-
-# Install python3
-RUN yes | apt-get install python3
+# Add jenkins to docker group
+RUN usermod -aG 998 jenkins
 
 USER jenkins
 
